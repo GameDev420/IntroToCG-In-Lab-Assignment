@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class SimpleRotator : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] Vector3 rotationPerSecond = Vector3.zero;
+    [SerializeField] Space spaceMode = Space.Self;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.Rotate(rotationPerSecond * Time.deltaTime, spaceMode);
     }
 }
